@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import TurfDetailsPage from "./pages/turf/TurfDetailsPage";
 import TurfListPage from "./pages/turf/TurfListPage";
+import MyBookingsPage from "./pages/booking/MyBookingsPage";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "turfs/:turfId",
         element: <TurfDetailsPage />,
+      },
+      {
+        path: "bookings",
+        element: <MyBookingsPage />,
       },
     ],
   },
