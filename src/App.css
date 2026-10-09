@@ -2061,3 +2061,962 @@
     gap: 15px;
   }
 }
+
+.admin-catalog-page {
+  min-height: 100vh;
+  padding: 72px 5vw 100px;
+  background: #f4f5ef;
+}
+
+.admin-catalog-hero {
+  max-width: 1180px;
+  margin: 0 auto 64px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: end;
+}
+
+.admin-catalog-hero h1 {
+  margin: 12px 0 0;
+  font-size: clamp(56px, 8vw, 110px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.admin-catalog-hero h1 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.admin-catalog-hero > p {
+  max-width: 420px;
+  margin: 0 0 8px;
+  color: #697069;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.admin-catalog-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.admin-catalog-panel {
+  background: #ffffff;
+  border: 1px solid #e2e5dd;
+  padding: 32px;
+}
+
+.admin-panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #e5e7e1;
+}
+
+.admin-panel-header > div > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #858c83;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.admin-panel-header h2 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: -0.04em;
+}
+
+.admin-panel-header > button {
+  border: 0;
+  background: #172018;
+  color: #ffffff;
+  padding: 11px 16px;
+  cursor: pointer;
+}
+
+.admin-add-form {
+  display: flex;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.admin-add-form input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #d9ddd5;
+  background: #f8f9f5;
+  padding: 13px 14px;
+  outline: none;
+}
+
+.admin-add-form input:focus {
+  border-color: #172018;
+}
+
+.admin-add-form button {
+  border: 0;
+  background: #b7e34b;
+  color: #172018;
+  padding: 0 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-add-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-catalog-list {
+  min-height: 240px;
+}
+
+.admin-catalog-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 19px 0;
+  border-bottom: 1px solid #e9ebe5;
+}
+
+.admin-catalog-item > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.admin-catalog-item > div > span {
+  color: #8a9088;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.admin-catalog-item strong {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.admin-catalog-item > button {
+  border: 0;
+  background: transparent;
+  color: #9a4d43;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.admin-empty-state {
+  padding: 70px 0;
+  text-align: center;
+  color: #8a9088;
+}
+
+.admin-catalog-error {
+  max-width: 1180px;
+  margin: 0 auto 24px;
+  padding: 14px 18px;
+  background: #fff0ed;
+  color: #9a4d43;
+  border: 1px solid #f0d5cf;
+}
+
+.admin-loading-page {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 800px) {
+  .admin-catalog-page {
+    padding: 48px 20px 70px;
+  }
+
+  .admin-catalog-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .admin-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-catalog-panel {
+    padding: 24px;
+  }
+
+  .admin-add-form {
+    flex-direction: column;
+  }
+
+  .admin-add-form button {
+    min-height: 44px;
+  }
+}
+
+.admin-venues-page {
+  min-height: 100vh;
+  padding: 72px 5vw 100px;
+  background: #f4f5ef;
+}
+
+.admin-venues-hero {
+  max-width: 1180px;
+  margin: 0 auto 64px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: end;
+}
+
+.admin-venues-hero h1 {
+  margin: 12px 0 0;
+  font-size: clamp(56px, 8vw, 110px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.admin-venues-hero h1 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.admin-venues-hero-copy {
+  max-width: 430px;
+  margin-bottom: 8px;
+}
+
+.admin-venues-hero-copy > p {
+  margin: 0 0 28px;
+  color: #697069;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.venue-form-section {
+  max-width: 1180px;
+  margin: 0 auto 64px;
+  padding: 36px;
+  background: #ffffff;
+  border: 1px solid #e2e5dd;
+}
+
+.venue-form-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 36px;
+}
+
+.venue-form-header h2 {
+  margin: 10px 0 0;
+  font-size: 36px;
+  letter-spacing: -0.04em;
+}
+
+.venue-form-header > button {
+  border: 0;
+  background: transparent;
+  color: #697069;
+  cursor: pointer;
+}
+
+.venue-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.venue-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.venue-form label span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.venue-form input,
+.venue-form textarea {
+  width: 100%;
+  border: 1px solid #d9ddd5;
+  background: #f8f9f5;
+  padding: 14px 15px;
+  outline: none;
+  resize: vertical;
+}
+
+.venue-form input:focus,
+.venue-form textarea:focus {
+  border-color: #172018;
+}
+
+.venue-form-full {
+  grid-column: 1 / -1;
+}
+
+.venue-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.venue-form-actions button {
+  min-height: 46px;
+  padding: 0 20px;
+  border: 0;
+  cursor: pointer;
+}
+
+.venue-form-actions button:first-child {
+  background: #eceee8;
+}
+
+.venue-form-actions button:last-child {
+  background: #172018;
+  color: #ffffff;
+}
+
+.venue-form-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.venues-section {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.venues-section-header {
+  margin-bottom: 28px;
+}
+
+.venues-section-header h2 {
+  margin: 10px 0 0;
+  font-size: 42px;
+  letter-spacing: -0.04em;
+}
+
+.venues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.venue-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  background: #ffffff;
+  border: 1px solid #e2e5dd;
+}
+
+.venue-card-number {
+  padding: 30px 20px;
+  color: #899087;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  border-right: 1px solid #e2e5dd;
+}
+
+.venue-card-main {
+  padding: 30px;
+}
+
+.venue-card-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.venue-card-heading > div > span {
+  color: #858c83;
+  font-size: 13px;
+}
+
+.venue-card-heading h3 {
+  margin: 7px 0 0;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.venue-status {
+  align-self: flex-start;
+  padding: 7px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.venue-status.active {
+  background: #e9f5cc;
+}
+
+.venue-status.inactive {
+  background: #eee;
+  color: #777;
+}
+
+.venue-card-description {
+  max-width: 700px;
+  margin: 20px 0;
+  color: #697069;
+  line-height: 1.6;
+}
+
+.venue-card-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7e1;
+}
+
+.venue-card-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.venue-card-details span {
+  color: #858c83;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.venue-card-details strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.venue-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.venue-card-actions button {
+  border: 0;
+  background: transparent;
+  color: #9a4d43;
+  cursor: pointer;
+}
+
+.venues-empty {
+  padding: 80px 40px;
+  background: #ffffff;
+  border: 1px solid #e2e5dd;
+  text-align: center;
+}
+
+.venues-empty > span {
+  color: #899087;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.venues-empty h3 {
+  margin: 14px 0 8px;
+  font-size: 30px;
+}
+
+.venues-empty p {
+  margin: 0 0 24px;
+  color: #697069;
+}
+
+.venues-empty button {
+  border: 0;
+  background: #172018;
+  color: #ffffff;
+  padding: 13px 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .admin-venues-page {
+    padding: 48px 20px 70px;
+  }
+
+  .admin-venues-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .venue-form-section {
+    padding: 24px;
+  }
+
+  .venue-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-form-full {
+    grid-column: auto;
+  }
+
+  .venue-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .venue-form-actions button {
+    width: 100%;
+  }
+
+  .venue-card {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-card-number {
+    padding: 14px 20px;
+    border-right: 0;
+    border-bottom: 1px solid #e2e5dd;
+  }
+
+  .venue-card-main {
+    padding: 24px;
+  }
+
+  .venue-card-heading {
+    flex-direction: column;
+  }
+
+  .venue-card-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Turf administration */
+
+.admin-turfs-page {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 54px 0 100px;
+}
+
+.admin-turfs-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: end;
+  gap: 48px;
+  padding: 30px 0 58px;
+}
+
+.admin-turfs-hero h1 {
+  margin: 16px 0 0;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+}
+
+.admin-turfs-hero h1 em {
+  color: #b8f36b;
+  font-style: normal;
+}
+
+.admin-turfs-hero-copy {
+  max-width: 430px;
+  justify-self: end;
+}
+
+.admin-turfs-hero-copy p {
+  margin: 0 0 24px;
+  color: var(--text-secondary, #a6aaa5);
+  line-height: 1.8;
+}
+
+.admin-turfs-hero-copy small {
+  display: block;
+  margin-top: 12px;
+  color: #b8bcb5;
+}
+
+.admin-turfs-hero button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.admin-turf-notice {
+  margin: 0 0 22px;
+  padding: 14px 18px;
+  border: 1px solid rgba(184, 243, 107, 0.28);
+  border-radius: 10px;
+  background: rgba(184, 243, 107, 0.07);
+  color: #c9f59b;
+}
+
+.turf-form-section {
+  margin-bottom: 64px;
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: #171a17;
+}
+
+.turf-form-header,
+.admin-turfs-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.turf-form-header h2,
+.admin-turfs-list-header h2 {
+  margin: 8px 0 0;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  letter-spacing: -0.045em;
+}
+
+.turf-form-header > button,
+.admin-turfs-list-header > button,
+.turf-form-actions > button,
+.admin-turf-actions > button,
+.admin-turfs-empty button {
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.turf-form {
+  display: grid;
+  gap: 26px;
+}
+
+.turf-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.turf-form-grid label,
+.turf-form > label {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+}
+
+.turf-form label > span,
+.turf-form-grid label > span {
+  color: #d8dbd5;
+  font-size: 0.88rem;
+}
+
+.turf-form input:not([type="checkbox"]),
+.turf-form textarea,
+.turf-form select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  outline: none;
+  background: #101210;
+  color: #f3f4ef;
+  font: inherit;
+}
+
+.turf-form textarea {
+  resize: vertical;
+}
+
+.turf-form input:focus,
+.turf-form textarea:focus,
+.turf-form select:focus {
+  border-color: #b8f36b;
+  box-shadow: 0 0 0 3px rgba(184, 243, 107, 0.08);
+}
+
+.turf-form-full {
+  grid-column: 1 / -1;
+}
+
+.turf-current-venue {
+  margin: 0;
+  color: #c3c8bf;
+  line-height: 1.7;
+}
+
+.turf-selection-group {
+  min-width: 0;
+  margin: 0;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.turf-selection-group legend {
+  padding: 0 8px;
+  color: #f2f4ee;
+  font-weight: 600;
+}
+
+.turf-selection-group legend span {
+  color: #a4aaa0;
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
+.turf-selection-group > p {
+  color: #a4aaa0;
+  font-size: 0.9rem;
+}
+
+.turf-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.turf-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+  cursor: pointer;
+}
+
+.turf-checkbox input {
+  accent-color: #b8f36b;
+  flex: 0 0 auto;
+}
+
+.turf-checkbox span {
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+.turf-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.turf-form-actions button[type="submit"] {
+  border-color: #b8f36b;
+  background: #b8f36b;
+  color: #141711;
+  font-weight: 700;
+}
+
+.turf-form-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.admin-turfs-list-section {
+  margin-top: 30px;
+}
+
+.admin-turfs-list-header {
+  align-items: end;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.admin-turfs-empty {
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.admin-turfs-empty > span {
+  color: #b8f36b;
+  font-size: 0.8rem;
+}
+
+.admin-turfs-empty h3 {
+  margin: 18px 0 8px;
+  font-size: 1.8rem;
+}
+
+.admin-turfs-empty p {
+  margin-bottom: 24px;
+  color: #a6aaa5;
+}
+
+.admin-turfs-list {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-turf-card {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.admin-turf-number {
+  color: #b8f36b;
+  font-size: 0.85rem;
+  padding-top: 5px;
+}
+
+.admin-turf-main {
+  min-width: 0;
+}
+
+.admin-turf-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.admin-turf-heading > div > span {
+  color: #a6aaa5;
+  font-size: 0.85rem;
+}
+
+.admin-turf-heading h3 {
+  margin: 8px 0 0;
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  letter-spacing: -0.035em;
+}
+
+.admin-turf-main > p {
+  color: #b6bbb3;
+  line-height: 1.7;
+}
+
+.admin-turf-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 38px;
+  margin-top: 22px;
+}
+
+.admin-turf-meta > div {
+  display: grid;
+  gap: 6px;
+}
+
+.admin-turf-meta span {
+  color: #a6aaa5;
+  font-size: 0.8rem;
+}
+
+.admin-turf-meta strong {
+  font-size: 1.05rem;
+}
+
+.admin-turf-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.admin-turf-tags span {
+  padding: 7px 10px;
+  border: 1px solid rgba(184, 243, 107, 0.22);
+  border-radius: 100px;
+  color: #c8f39b;
+  font-size: 0.8rem;
+}
+
+.admin-turf-tags .amenity-tag {
+  border-color: rgba(255, 255, 255, 0.13);
+  color: #d0d4cc;
+}
+
+.admin-turf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.admin-turf-actions .danger-action {
+  color: #f2a4a4;
+}
+
+.admin-turf-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media (max-width: 700px) {
+  .admin-turfs-page {
+    width: min(100% - 28px, 1180px);
+    padding-top: 28px;
+  }
+
+  .admin-turfs-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 38px;
+  }
+
+  .admin-turfs-hero-copy {
+    justify-self: start;
+  }
+
+  .turf-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .turf-form-full {
+    grid-column: auto;
+  }
+
+  .turf-checkbox-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-turf-card {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .admin-turf-heading {
+    flex-direction: column;
+  }
+
+  .admin-turf-meta {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .turf-checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .turf-form-section {
+    padding: 18px;
+  }
+}

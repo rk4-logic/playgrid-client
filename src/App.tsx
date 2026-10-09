@@ -7,6 +7,9 @@ import NotFoundPage from "./pages/NotFoundPage";
 import TurfDetailsPage from "./pages/turf/TurfDetailsPage";
 import TurfListPage from "./pages/turf/TurfListPage";
 import MyBookingsPage from "./pages/booking/MyBookingsPage";
+import AdminCatalogPage from "./pages/admin/AdminCatalogPage";
+import AdminVenuesPage from "./pages/admin/AdminVenuesPage";
+import AdminTurfsPage from "./pages/admin/AdminTurfsPage";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +31,18 @@ const router = createBrowserRouter([
       {
         path: "bookings",
         element: <MyBookingsPage />,
+      },
+      {
+        path: "admin/catalog",
+        element: <AdminCatalogPage />,
+      },
+      {
+        path: "admin/venues",
+        element: <AdminVenuesPage />,
+      },
+      {
+        path: "admin/turfs",
+        element: <AdminTurfsPage />,
       },
     ],
   },
