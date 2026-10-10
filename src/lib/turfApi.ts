@@ -79,3 +79,43 @@ export async function updateTurf(
 export async function deactivateTurf(id: string) {
   await api.delete(`/turfs/${id}`);
 }
+
+
+export interface PublicTurfFilters {
+  city?: string;
+  sportId?: string;
+  page?: number;
+  limit?: number;
+}
+
+export interface TurfPagination {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+}
+
+export interface PublicTurfList {
+  items: TurfRecord[];
+  pagination: TurfPagination;
+}
+
+export async function getPublicTurfs(
+  filters: PublicTurfFilters = {},
+): Promise<PublicTurfList> {
+  const response = await api.get<
+    ApiResponse<TurfRecord[]> & { pagination: TurfPagination }
+  >("/turfs", {
+    params: {
+      page: filters.page ?? 1,
+      limit: filters.limit ?? 50,
+      ...(filters.city ? { city: filters.city } : {}),
+      ...(filters.sportId ? { sportId: filters.sportId } : {}),
+    },
+  });
+
+  return {
+    items: response.data.data,
+    pagination: response.data.pagination,
+  };
+}

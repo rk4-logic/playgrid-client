@@ -1,12 +1,12 @@
+
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-
 import api from "@/lib/api";
+import type { TurfRecord } from "@/lib/turfApi";
 import type {
   ApiResponse,
   CreatedBooking,
-  Turf,
   TurfAvailability,
 } from "@/types/api";
 
@@ -53,7 +53,7 @@ function getDateLabel(date: Date) {
 function TurfDetailsPage() {
   const { turfId } = useParams();
 
-  const [turf, setTurf] = useState<Turf | null>(null);
+  const [turf, setTurf] = useState<TurfRecord | null>(null);
 
   const [selectedDate, setSelectedDate] = useState(() => {
     const today = new Date();
@@ -87,7 +87,7 @@ function TurfDetailsPage() {
         setIsLoading(true);
         setError("");
 
-        const response = await api.get<ApiResponse<Turf>>(`/turfs/${turfId}`);
+        const response = await api.get<ApiResponse<TurfRecord>>(`/turfs/${turfId}`);
 
         setTurf(response.data.data);
       } catch {
@@ -177,9 +177,9 @@ function TurfDetailsPage() {
 
   const totalAmount = selectedSlot && turf
     ? ((selectedSlot.endTime.getTime() -
-        selectedSlot.startTime.getTime()) /
-        (1000 * 60 * 60)) *
-      turf.pricePerHour
+      selectedSlot.startTime.getTime()) /
+      (1000 * 60 * 60)) *
+    turf.pricePerHour
     : 0;
 
   const handleBooking = async () => {
@@ -365,6 +365,50 @@ function TurfDetailsPage() {
         </div>
       </section>
 
+
+      <div className="turf-detail-facts">
+        <div>
+          <span>Venue</span>
+          <strong>{turf.venue?.name ?? "Sports venue"}</strong>
+        </div>
+
+        <div>
+          <span>Location</span>
+          <strong>
+            {turf.address}, {turf.city}, {turf.state} {turf.pincode}
+          </strong>
+        </div>
+
+        <div>
+          <span>Hourly rate</span>
+          <strong>
+            ₹{Number(turf.pricePerHour).toLocaleString("en-IN")} / hour
+          </strong>
+        </div>
+      </div>
+
+      {turf.sports.length > 0 && (
+        <section className="turf-detail-section">
+          <h2>Sports you can play</h2>
+          <div className="turf-detail-tags">
+            {turf.sports.map((sport) => (
+              <span key={sport.id}>{sport.name}</span>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {turf.amenities.length > 0 && (
+        <section className="turf-detail-section">
+          <h2>Venue amenities</h2>
+          <div className="turf-detail-tags">
+            {turf.amenities.map((amenity) => (
+              <span key={amenity.id}>{amenity.name}</span>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="booking-section">
         <div className="booking-heading">
           <div>
@@ -457,9 +501,8 @@ function TurfDetailsPage() {
                         key={slot.startTime.toISOString()}
                         type="button"
                         disabled={booked}
-                        className={`slot-button ${
-                          booked ? "booked" : ""
-                        } ${selected ? "selected" : ""}`}
+                        className={`slot-button ${booked ? "booked" : ""
+                          } ${selected ? "selected" : ""}`}
                         onClick={() => setSelectedSlot(slot)}
                       >
                         <span>{slot.label}</span>

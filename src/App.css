@@ -3020,3 +3020,77 @@
     padding: 18px;
   }
 }
+
+
+.turf-card-sports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.turf-card-sports span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-color, #dce3dc);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: var(--text-secondary, #526052);
+}
+
+
+.turf-detail-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.turf-detail-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--border-color, #dce3dc);
+  border-radius: 14px;
+}
+
+.turf-detail-facts span {
+  color: var(--text-secondary, #647064);
+  font-size: 0.8rem;
+}
+
+.turf-detail-facts strong {
+  overflow-wrap: anywhere;
+  font-size: 0.95rem;
+}
+
+.turf-detail-section {
+  margin: 1.5rem 0;
+}
+
+.turf-detail-section h2 {
+  margin-bottom: 0.8rem;
+}
+
+.turf-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.turf-detail-tags span {
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--border-color, #dce3dc);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .turf-detail-facts {
+    grid-template-columns: 1fr;
+  }
+}
