@@ -46,7 +46,7 @@ function MyBookingsPage() {
         setError("");
 
         const response = await api.get<ApiResponse<Booking[]>>(
-          "/bookings/my",
+          "/bookings/mine",
         );
 
         setBookings(response.data.data);
@@ -101,9 +101,9 @@ function MyBookingsPage() {
         currentBookings.map((booking) =>
           booking.id === bookingId
             ? {
-                ...booking,
-                status: "CANCELLED",
-              }
+              ...booking,
+              status: "CANCELLED",
+            }
             : booking,
         ),
       );

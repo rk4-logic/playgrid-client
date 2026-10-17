@@ -10,8 +10,6 @@ import type {
   TurfAvailability,
 } from "@/types/api";
 
-const BOOKING_START_HOUR = 6;
-const BOOKING_END_HOUR = 23;
 
 interface BookingSlot {
   startTime: Date;
@@ -25,14 +23,6 @@ function formatDateForApi(date: Date) {
   const day = String(date.getDate()).padStart(2, "0");
 
   return `${year}-${month}-${day}`;
-}
-
-function createDateAtHour(date: Date, hour: number) {
-  const result = new Date(date);
-
-  result.setHours(hour, 0, 0, 0);
-
-  return result;
 }
 
 function formatTime(date: Date) {
@@ -140,46 +130,42 @@ function TurfDetailsPage() {
    * This is temporary until venue operating hours become
    * owner-managed backend data.
    */
-  const slots = useMemo(() => {
-    const result: BookingSlot[] = [];
 
-    for (
-      let hour = BOOKING_START_HOUR;
-      hour < BOOKING_END_HOUR;
-      hour += 1
-    ) {
-      const startTime = createDateAtHour(selectedDate, hour);
-      const endTime = createDateAtHour(selectedDate, hour + 1);
+  const slots = useMemo<BookingSlot[]>(() => {
+    if (!availability) return [];
 
-      result.push({
+    return availability.availableSlots.map((slot) => {
+      const startTime = new Date(slot.startTime);
+      const endTime = new Date(slot.endTime);
+
+      return {
         startTime,
         endTime,
         label: `${formatTime(startTime)} – ${formatTime(endTime)}`,
-      });
-    }
+      };
+    });
+  }, [availability]);
 
-    return result;
-  }, [selectedDate]);
 
   const isSlotBooked = (slot: BookingSlot) => {
-    if (!availability) return false;
+    if (!availability) return true;
 
-    return availability.bookings.some((booking) => {
-      const bookingStart = new Date(booking.startTime);
-      const bookingEnd = new Date(booking.endTime);
-
-      return (
-        slot.startTime < bookingEnd &&
-        slot.endTime > bookingStart
-      );
-    });
+    return !availability.availableSlots.some(
+      (availableSlot) =>
+        new Date(availableSlot.startTime).getTime() ===
+        slot.startTime.getTime() &&
+        new Date(availableSlot.endTime).getTime() ===
+        slot.endTime.getTime(),
+    );
   };
 
-  const totalAmount = selectedSlot && turf
-    ? ((selectedSlot.endTime.getTime() -
-      selectedSlot.startTime.getTime()) /
-      (1000 * 60 * 60)) *
-    turf.pricePerHour
+
+  const totalAmount = selectedSlot && availability
+    ? availability.availableSlots.find(
+      (slot) =>
+        new Date(slot.startTime).getTime() ===
+        selectedSlot.startTime.getTime(),
+    )?.price ?? 0
     : 0;
 
   const handleBooking = async () => {

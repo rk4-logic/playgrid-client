@@ -52,6 +52,7 @@ export interface TurfAvailability {
     pricePerHour: number;
   };
   date: string;
+  availableSlots: AvailableBookingSlot[];
   bookings: AvailabilityBooking[];
 }
 
@@ -67,4 +68,10 @@ export interface CreatedBooking {
   turf?: Turf & {
     venue?: Venue;
   };
+}
+
+export interface AvailableBookingSlot {
+  startTime: string;
+  endTime: string;
+  price: number;
 }

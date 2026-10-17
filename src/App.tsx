@@ -10,6 +10,7 @@ import MyBookingsPage from "./pages/booking/MyBookingsPage";
 import AdminCatalogPage from "./pages/admin/AdminCatalogPage";
 import AdminVenuesPage from "./pages/admin/AdminVenuesPage";
 import AdminTurfsPage from "./pages/admin/AdminTurfsPage";
+import OwnerDashboardPage from "./pages/owner/OwnerDashboardPage";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "admin/turfs",
         element: <AdminTurfsPage />,
+      },
+      {
+        path: "owner/dashboard",
+        element: <OwnerDashboardPage />,
       },
     ],
   },
